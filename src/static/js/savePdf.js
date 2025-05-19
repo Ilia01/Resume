@@ -1,4 +1,4 @@
-function saveAsPDF() {
+export function saveAsPDF() {
   document.querySelectorAll('.cv-section').forEach(section => {
       section.style.opacity = '1';
       section.style.transform = 'none';
