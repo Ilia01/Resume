@@ -3,7 +3,7 @@
 {% block title %}Ilia Goginashvili - Backend Developer{% endblock %}
 
 {% block content %}
-<a href="#" class="download-btn" onclick="window.saveAsPDF(); return false;" title="Generate Professional CV PDF">
+<a href="#" class="download-btn" onclick="saveAsPDF(); return false;" title="Generate Professional CV PDF">
     <i class="fas fa-file-pdf"></i>
     <span>Save as PDF</span>
 </a>
@@ -119,24 +119,5 @@
 
 {% block extra_js %}
 <script src="{{url_for('static', filename='js/modal.js') }}"></script>
-<script>
-function saveAsPDF() {
-    document.querySelectorAll('.cv-section').forEach(section => {
-        section.style.opacity = '1';
-        section.style.transform = 'none';
-        section.style.visibility = 'visible';
-        section.style.display = 'block';
-    });
-
-    document.body.classList.add('printing');
-    
-    setTimeout(() => {
-        window.print();
-        
-        setTimeout(() => {
-            document.body.classList.remove('printing');
-        }, 1000);
-    }, 100);
-}
-</script>
+<script src="{{url_for('static', filename='js/savePdf.js') }}"></script>
 {% endblock %}
