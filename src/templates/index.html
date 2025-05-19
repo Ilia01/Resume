@@ -1,162 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Backend Developer</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
+{% extends "base.html" %}
+
+{% block title %}Ilia Goginashvili - Backend Developer{% endblock %}
+
+{% block content %}
+<a href="#" class="download-btn" onclick="window.saveAsPDF(); return false;" title="Generate Professional CV PDF">
+    <i class="fas fa-file-pdf"></i>
+    <span>Save as PDF</span>
+</a>
+
+<div class="cv-document">
+    <nav class="cv-nav">
+        <ul>
+            <li><a href="#summary" class="nav-link">Summary</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Your Name</h1>
+    <header class="cv-header">
+        <div class="cv-name">
+            <h1>Ilia Goginashvili</h1>
             <h2>Backend Developer</h2>
-            <p class="tagline">Building robust and scalable applications with Python & Flask</p>
-            
-            <div class="quick-info">
-                <div class="quick-info-item">
-                    <i class="fas fa-code"></i>
-                    <h3>3+ Years</h3>
-                    <p>Backend Development</p>
-                </div>
-                <div class="quick-info-item">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>10+ Projects</h3>
-                    <p>Completed Successfully</p>
-                </div>
-                <div class="quick-info-item">
-                    <i class="fas fa-users"></i>
-                    <h3>5+ Teams</h3>
-                    <p>Collaborated With</p>
-                </div>
+        </div>
+        <div class="contact-details">
+            <div class="contact-row">
+                <span><i class="fas fa-map-marker-alt"></i> Tbilisi, Georgia</span>
+                <span><i class="fas fa-phone"></i> +995 599 39 23 30</span>
+                <span><i class="fas fa-envelope"></i> iliagoginashvili16@gmail.com</span>
+            </div>
+            <div class="contact-row">
+                <a href="https://github.com/Ilia01" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/ilia-goginashvili-066689305" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p>I am a passionate backend developer specializing in Python and Flask, with a strong focus on creating efficient, scalable, and maintainable applications. My expertise includes RESTful API development, database optimization, and cloud deployment.</p>
-        </div>
-    </section>
+    <main class="cv-content">
+        <section id="summary" class="cv-section">
+            <h3>Summary</h3>
+            <p>FullStack Backend-focused Developer with 2 years of nonwork experience in web development. Just finished a python course in IT Step Academy Georgia. Eager to learn new technologies and i am currently experimenting with NestJs-Angular environment.</p>
+        </section>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Senior Backend Developer</h3>
-                        <h4>Tech Company Inc.</h4>
-                        <p class="date">2022 - Present</p>
-                        <ul>
-                            <li>Led development of microservices architecture serving 100K+ users</li>
-                            <li>Reduced API response time by 40% through query optimization</li>
-                            <li>Implemented CI/CD pipeline reducing deployment time by 60%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Backend Developer</h3>
-                        <h4>Startup XYZ</h4>
-                        <p class="date">2020 - 2022</p>
-                        <ul>
-                            <li>Developed RESTful APIs handling 10K+ daily requests</li>
-                            <li>Implemented automated testing increasing coverage to 85%</li>
-                            <li>Mentored junior developers and conducted code reviews</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <ul>
-                        <li>Python (Flask, Django)</li>
-                        <li>RESTful APIs</li>
-                        <li>SQL & NoSQL Databases</li>
-                        <li>Microservices</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & Tools</h3>
-                    <ul>
-                        <li>Docker & Kubernetes</li>
-                        <li>AWS & Cloud Services</li>
-                        <li>CI/CD Pipelines</li>
-                        <li>Git & GitHub</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Team Leadership</li>
-                        <li>Problem Solving</li>
-                        <li>Technical Writing</li>
-                        <li>Agile Methodologies</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
+        <section id="education" class="cv-section">
+            <h3>Education</h3>
             <div class="education-item">
-                <h3>Bachelor of Science in Computer Science</h3>
-                <h4>University of Technology</h4>
-                <p class="date">2016 - 2020</p>
-                <p>Graduated with honors. Key courses: Data Structures, Algorithms, Database Systems, Software Engineering, Cloud Computing</p>
+                <div class="education-header">
+                    <h4>Bachelor's Degree</h4>
+                    <span class="institution">Business and Technologies University</span>
+                    <span class="date">2024-2027</span>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-grid">
-                <a href="mailto:your.email@example.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>your.email@example.com</span>
-                </a>
-                <a href="https://github.com/yourusername" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
+            <div class="education-item">
+                <div class="education-header">
+                    <h4>Certificate</h4>
+                    <span class="institution"><a href="#" class="certificate-link">IT Step Academy Georgia</a></span>
+                    <span class="date">2024-2025</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
-        </div>
-    </footer>
+        <section id="skills" class="cv-section">
+            <h3>Technical Skills</h3>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h4>Programming Languages</h4>
+                    <p>Python, SQL, JavaScript, TypeScript</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Databases</h4>
+                    <p>SQL, PostgreSQL, MongoDB</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Frameworks & Tools</h4>
+                    <p>Flask, Django, NestJS (basic), Angular (basic), Git & GitHub, PostgreSQL</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Soft Skills</h4>
+                    <p>Problem Solving, Team Collaboration, Quick Learning, Communication</p>
+                </div>
+            </div>
+        </section>
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-</html>
+        <section id="projects" class="cv-section">
+            <h3>Projects</h3>
+            <div class="project-item">
+                <div class="project-header">
+                    <h4>Turn-Based Multiplayer Strategy Game</h4>
+                    <span class="date">2025</span>
+                </div>
+                <ul>
+                    <li>Developed Fullstack Django web application</li>
+                    <li>Implemented HTTP polling and real-time chat system</li>
+                    <li>Had first-hand experience with complex state management</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<div id="certificateModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="pdf-container">
+            <object
+                data="{{ url_for('view_certificate') }}"
+                type="application/pdf"
+                width="100%"
+                height="100%">
+                <p>It appears you don't have a PDF plugin for this browser. 
+                You can <a href="{{ url_for('view_certificate') }}">click here to download the PDF file.</a></p>
+            </object>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{url_for('static', filename='js/modal.js') }}"></script>
+<script>
+function saveAsPDF() {
+    document.querySelectorAll('.cv-section').forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'none';
+        section.style.visibility = 'visible';
+        section.style.display = 'block';
+    });
+
+    document.body.classList.add('printing');
+    
+    setTimeout(() => {
+        window.print();
+        
+        setTimeout(() => {
+            document.body.classList.remove('printing');
+        }, 1000);
+    }, 100);
+}
+</script>
+{% endblock %}
