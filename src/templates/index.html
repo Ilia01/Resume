@@ -3,10 +3,10 @@
 {% block title %}Ilia Goginashvili - Backend Developer{% endblock %}
 
 {% block content %}
-<a href="#" class="download-btn" title="Generate Professional CV PDF">
+<button class="download-btn" id="downloadPdf" type="button">
     <i class="fas fa-file-pdf"></i>
     <span>Save as PDF</span>
-</a>
+</button>
 
 <div class="cv-document">
     <nav class="cv-nav">
@@ -54,7 +54,7 @@
             <div class="education-item">
                 <div class="education-header">
                     <h4>Certificate</h4>
-                    <span class="institution"><a href="#" class="certificate-link">IT Step Academy Georgia</a></span>
+                    <span class="institution"><a class="certificate-link">IT Step Academy Georgia</a></span>
                     <span class="date">2024-2025</span>
                 </div>
             </div>
@@ -119,5 +119,5 @@
 
 {% block extra_js %}
 <script src="{{url_for('static', filename='js/modal.js') }}" type="module"></script>
-<script src="{{url_for('static', filename='js/savePdf.js') }}" type="module"></script>
+<script src="{{url_for('static', filename='js/savePdf.js') }}"></script>
 {% endblock %}

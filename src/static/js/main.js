@@ -1,12 +1,6 @@
-import { saveAsPDF } from "./savePDF";
-
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            if (anchor.className === "download-btn"){
-                saveAsPDF();
-                return;
-            }
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -24,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkVisibility() {
         sections.forEach(section => {
             const sectionTop = section.getBoundingClientRect().top;
-            const sectionHeight = section.clientHeight;
             const windowHeight = window.innerHeight;
             
             if (sectionTop < windowHeight * 0.75) {

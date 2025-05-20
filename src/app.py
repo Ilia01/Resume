@@ -1,5 +1,6 @@
 from flask import Flask, render_template, send_file
 import os
+from config import Config
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -17,4 +18,4 @@ def view_certificate():
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=Config.DEBUG)
