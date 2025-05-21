@@ -120,4 +120,7 @@
 {% block extra_js %}
 <script src="{{url_for('static', filename='js/modal.js') }}" type="module"></script>
 <script src="{{url_for('static', filename='js/savePdf.js') }}"></script>
+<script>
+    alert("The Save as PDF function is not working on windows Chrome. i'm deeply sorry for the inconvenience. it works on other browsers.. Working on a fix, thank you for your understanding.");
+</script>
 {% endblock %}
